@@ -4,14 +4,30 @@ public var spawning : boolean = false;
 private var newEnemy : GameObject;
 private var canSpawn : int = 1;
 var player : int = 1;
-var minSpawnPerSecond: float = 0.1;
-var maxSpawnPerSecond: float = 0.2;
+var minSpawnPerSecond: float = 0.3;
+var maxSpawnPerSecond: float = 0.6;
 public var Enemy : GameObject[];
 var playerStats : PlayerStats;
 
+var bgA : GameObject;
+var bgB : GameObject;
+var bgScriptA : bgControl;
+var bgScriptB : bgControl;
 
-function Start() {
+
+function Start(){
 	playerStats = gameObject.GetComponent("PlayerStats");
+	
+	if (player == 1){
+		var logic = false;
+	}else{
+		logic = true;
+	}
+	
+	bgScriptA = bgA.GetComponent("bgControl");
+	bgScriptA.dirRight = logic;
+	bgScriptB = bgB.GetComponent("bgControl");
+	bgScriptB.dirRight = logic;	
 }
 
 
@@ -45,4 +61,14 @@ function FixedUpdate(){
 		oc.speed *= speedMulti;
 		canSpawn = Random.Range((25 / (maxSpawnPerSecond*speedMulti)), (25 / (minSpawnPerSecond*speedMulti)));
 	}
+	if (player == 1){
+		var newSpeed : float = playerStats.P1Speed;
+	} else{
+		newSpeed = playerStats.P2Speed;
+	}
+	
+	bgScriptA.speed = newSpeed;
+	bgScriptB.speed = newSpeed;
+	
+
 }

@@ -11,10 +11,21 @@ public var enemyMask : LayerMask;
 public var hitSlow : float = 0.9;
 public var hurtDelay : float = 0.2;
 
+public var distance : int = 100000;
+
+function Start(){
+	partyRules();
+}
+
 function FixedUpdate() {
 	if (running){
 		P1Speed += ((50 - P1Speed)/2000);
 		P2Speed += ((50 - P2Speed)/2000);
+		distance -= (P1Speed + P2Speed)/10;
+		Debug.Log(distance);
+		if (distance <= 0){
+			Debug.Log("FINISH");
+		}
 	}
 	
 	if (!p1hit){
@@ -48,6 +59,13 @@ function FixedUpdate() {
 			P2Hurt();
 		}
 	}
+	if (P1Speed < 10){
+		P1Speed = 10;
+	}
+	if (P2Speed < 10){
+		P2Speed = 10;
+	}
+	
 	Debug.Log("Player1: " + P1Speed + " - Player2: " + P2Speed);
 }
 
@@ -60,4 +78,9 @@ function P1Hurt(){
 function P2Hurt(){
 	yield WaitForSeconds (hurtDelay);
 	p2hit = false;
+}
+
+function partyRules(){
+	yield WaitForSeconds (5);
+	
 }
