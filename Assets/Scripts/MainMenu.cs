@@ -3,19 +3,13 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-	public void NewGame() {
+	public void StartGame() {
 		Application.LoadLevel("InGame");
 	}
 
-	public void Options() {
-
-	}
-
-	public void Credits() {
-
-	}
-	
-	public void Exit() {
-		if (!Application.isWebPlayer) Application.Quit();
+	public void Update() {
+		if (Input.GetKey(KeyCode.Return)) {
+			StartGame();
+		}
 	}
 }
