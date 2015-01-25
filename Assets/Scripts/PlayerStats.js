@@ -33,6 +33,12 @@ public var end : boolean = false;
 
 public var ref : Referee;
 
+public var p1Hurt : boolean = false;
+public var p1Red : boolean = false;
+
+public var p2Hurt : boolean = false;
+public var p2Red : boolean = false;
+
 
 function Start(){
 	iconPlayed = -1;
@@ -101,7 +107,7 @@ function FixedUpdate() {
 			newIcon1.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
 			newIcon2.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
 		}
-		if (vocalist.transform.position.y <= 600){
+		if (vocalist.transform.position.y <= 500){
 			vDir = 1;
 			vocalDown = false;
 		}
@@ -120,19 +126,47 @@ function FixedUpdate() {
 			end = true;
 		}
 	}
+	
+	if (p1Hurt){
+		if (!p1Red){
+			player1.renderer.material.color = Color.red;
+			p1Red = true;
+		}else{
+			player1.renderer.material.color = Color.white;
+			p1Red = false;
+		}
+	}
+	
+	
+	if (p2Hurt){
+		if (!p2Red){
+			player2.renderer.material.color = Color.red;
+			p2Red = true;
+		}else{
+			player2.renderer.material.color = Color.white;
+			p2Red = false;
+		}
+	}
+	
 }
 
 
 function P1Hurt(){
 	player1.SendMessage("PlayHurt");
+	p1Hurt = true;
 	yield WaitForSeconds(hurtDelay);
+	p1Hurt = false;
+	player1.renderer.material.color = Color.white;
 	p1hit = false;
 }
 
 
 function P2Hurt(){
 	player2.SendMessage("PlayHurt");
+	p2Hurt = true;
 	yield WaitForSeconds(hurtDelay);
+	p2Hurt = false;
+	player2.renderer.material.color = Color.white;
 	p2hit = false;
 }
 
@@ -149,13 +183,13 @@ function partyRules(){
 	newIcon1 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
 	newIcon1.transform.parent = vocalist.transform.parent;
 	newIcon1.transform.position.x -= 350;
-	newIcon1.transform.position.y -= 550;
+	newIcon1.transform.position.y -= 450;
 	newIcon1.transform.position.x += spaceMulti;
 	
 	newIcon2 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
 	newIcon2.transform.parent = vocalist.transform.parent;
 	newIcon2.transform.position.x += 200;
-	newIcon2.transform.position.y -= 550;
+	newIcon2.transform.position.y -= 450;
 	newIcon2.transform.position.x += spaceMulti;
 	
 	iconMove = true;
@@ -168,5 +202,5 @@ function partyRules(){
 	vocalDown = true;
 	yield WaitForSeconds (2);
 	vocalDown = false;
-	vocalist.transform.position.y = 900;
+	vocalist.transform.position.y = 800;
 }
