@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 	public enum Player { P1, P2 };
 	public Player player;
+	
+	public AudioClip[] hits;
 
 	private KeyCode upKey;
 	private KeyCode downKey;
@@ -59,5 +61,9 @@ public class PlayerMovement : MonoBehaviour {
 				break;
 			}
 		}
+	}
+	
+	public void PlayHurt() {
+		audio.PlayOneShot(hits[Random.Range(0, hits.Length)]);
 	}
 }

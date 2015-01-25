@@ -87,13 +87,15 @@ function FixedUpdate() {
 
 
 function P1Hurt(){
-	yield WaitForSeconds (hurtDelay);
+	player1.SendMessage("PlayHurt");
+	yield WaitForSeconds(hurtDelay);
 	p1hit = false;
 }
 
 
 function P2Hurt(){
-	yield WaitForSeconds (hurtDelay);
+	player2.SendMessage("PlayHurt");
+	yield WaitForSeconds(hurtDelay);
 	p2hit = false;
 }
 
