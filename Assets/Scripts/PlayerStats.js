@@ -61,8 +61,8 @@ function Update(){
 	if (Input.GetKeyUp(KeyCode.Escape) && !paused) {
 		pause = Instantiate(pauseScreen, Vector3.zero, Quaternion.identity);
 		pause.transform.parent = vocalist.transform.parent;
-		pause.transform.position.x += 540;
-		pause.transform.position.y += 320;
+		pause.transform.position.x += 640;
+		pause.transform.position.y += 400;
 		paused = true;
 		lastTime = Time.timeScale;
 		Time.timeScale = 0;
@@ -134,7 +134,7 @@ function FixedUpdate() {
 			newIcon1.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
 			newIcon2.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
 		}
-		if (vocalist.transform.position.y <= 500){
+		if (vocalist.transform.position.y <= 600){
 			vDir = 1;
 			vocalDown = false;
 		}
@@ -210,13 +210,13 @@ function partyRules(){
 	audio.PlayOneShot(vocalIcon[randIcon]);
 	newIcon1.transform.parent = vocalist.transform.parent;
 	newIcon1.transform.position.x -= 350;
-	newIcon1.transform.position.y -= 450;
+	newIcon1.transform.position.y -= 550;
 	newIcon1.transform.position.x += spaceMulti;
 	
 	newIcon2 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
 	newIcon2.transform.parent = vocalist.transform.parent;
 	newIcon2.transform.position.x += 200;
-	newIcon2.transform.position.y -= 450;
+	newIcon2.transform.position.y -= 550;
 	newIcon2.transform.position.x += spaceMulti;
 	
 	iconMove = true;
@@ -229,5 +229,5 @@ function partyRules(){
 	vocalDown = true;
 	yield WaitForSeconds (2);
 	vocalDown = false;
-	vocalist.transform.position.y = 800;
+	vocalist.transform.position.y = 900;
 }
