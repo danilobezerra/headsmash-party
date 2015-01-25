@@ -22,6 +22,7 @@ public var newIcon1 : GameObject;
 public var newIcon2 : GameObject;
 public var icon : GameObject[];
 public var iconMove : boolean = false;
+public var vocalIcon : AudioClip[];
 
 public var match : boolean = false;
 public var iconPlayed : int;
@@ -206,6 +207,7 @@ function partyRules(){
 	match = false;
 	iconPlayed = randIcon;
 	newIcon1 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
+	audio.PlayOneShot(vocalIcon[randIcon]);
 	newIcon1.transform.parent = vocalist.transform.parent;
 	newIcon1.transform.position.x -= 350;
 	newIcon1.transform.position.y -= 450;

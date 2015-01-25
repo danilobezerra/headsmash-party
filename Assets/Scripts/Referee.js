@@ -23,7 +23,7 @@ function Player2 (){
 }
 
 function Change(){
-	yield WaitForSeconds (2);
+	yield WaitForSeconds (4);
 	if (p1){
 		Application.LoadLevel ("Celebration_P1");
 	}else{

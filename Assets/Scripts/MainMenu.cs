@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour {
 	public AudioClip clip;
 	
 	public Component src;
+	public bool playing = false;
 
 	public void StartGame() {
 		audio.PlayOneShot(clip);
@@ -17,8 +18,9 @@ public class MainMenu : MonoBehaviour {
     }
 
 	public void Update() {
-		if (Input.GetKey(KeyCode.Return)) {
+		if (Input.GetKey(KeyCode.Return) && !playing) {
 			StartGame();
+			playing = true;
 		}
 	}
 }
