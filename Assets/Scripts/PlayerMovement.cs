@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 	public enum Player { P1, P2 };
 	public Player player;
-	public float movement;
 
 	private KeyCode upKey;
 	private KeyCode downKey;
@@ -32,14 +31,14 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKeyDown(upKey)) {
 			switch(tier) {
 			case 0:
-				transform.position = new Vector3(transform.position.x, movement, transform.position.z);
+				transform.position = new Vector3(transform.position.x, 1.7f, transform.position.z);
 				tier = 1;
 				break;
 			case 1:
 				tier = 1;
 				break;
 			case 2:
-				transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+				transform.position = new Vector3(transform.position.x, -0.7f, transform.position.z);
 				tier = 0;
 				break;
 			}
@@ -48,11 +47,11 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKeyDown(downKey)) {
 			switch(tier) {
 			case 0:
-				transform.position = new Vector3(transform.position.x, -movement, transform.position.z);
+				transform.position = new Vector3(transform.position.x, -3.4f, transform.position.z);
 				tier = 2;
 				break;
 			case 1:
-				transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+				transform.position = new Vector3(transform.position.x, -0.7f, transform.position.z);
 				tier = 0;
 				break;
 			case 2:

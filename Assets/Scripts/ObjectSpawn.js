@@ -38,16 +38,16 @@ function FixedUpdate(){
 		var randPos : int = Random.Range(1,4);
 		switch (randPos){
 			case 1:
-				randPos = -2.5;
+				var newPos = -3.5;
 				break;
 			case 2:
-				randPos = 0;
+				newPos = -0.5;
 				break;
 			case 3:
-				randPos = 2.5;
+				newPos = 1.5;
 				break;
 		}
-		newEnemy = Instantiate(Enemy[randObstacle], Vector3(0, randPos, 0), Quaternion.identity);
+		newEnemy = Instantiate(Enemy[randObstacle], Vector3(0, newPos, 0), Quaternion.identity);
 		if (player == 1){
 			var speedMulti = playerStats.P1Speed / 10;
 			var oc: ObjectControl = newEnemy.GetComponent("ObjectControl");
