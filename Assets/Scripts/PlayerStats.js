@@ -11,16 +11,37 @@ public var enemyMask : LayerMask;
 public var hitSlow : float = 0.9;
 public var hurtDelay : float = 0.2;
 
-public var distance : float = 1000;
+public var distance : float = 3000;
 
 public var vocalist : GameObject;
 public var vocalDown : boolean;
 public var vDir : int;
 
+public var spaceMulti : float = 0;
+public var newIcon1 : GameObject;
+public var newIcon2 : GameObject;
+public var icon : GameObject[];
+public var iconMove : boolean = false;
+
+public var match : boolean = false;
+public var iconPlayed : int;
+
+public var miniP1 : GameObject;
+public var miniP2 : GameObject;
+public var decision : GameObject;
+public var end : boolean = false;
+
+public var ref : Referee;
+
 
 function Start(){
-	yield WaitForSeconds (7);
+	iconPlayed = -1;
+	yield WaitForSeconds(6);
 	partyRules();
+	yield WaitForSeconds(8);
+	partyRules();
+	var newReferee = GameObject.Find("Ref");
+	ref = newReferee.GetComponent("Referee");
 }
 
 
@@ -30,7 +51,6 @@ function FixedUpdate() {
 		P2Speed += ((50 - P2Speed)/2000);
 		distance -= (P1Speed + P2Speed)/10;
 		if (distance <= 0){
-			Debug.Log("FINISH");
 			//load level
 		}
 	}
@@ -77,12 +97,29 @@ function FixedUpdate() {
 		
 	if(vocalDown){
 		vocalist.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
+		if (iconMove){
+			newIcon1.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
+			newIcon2.transform.Translate(Vector2(0,vDir) * 400 * Time.deltaTime);
+		}
 		if (vocalist.transform.position.y <= 600){
 			vDir = 1;
 			vocalDown = false;
 		}
 	}
 	
+	miniP1.transform.position.x += ((300*(P1Speed/10))/distance);
+	miniP2.transform.position.x -= ((300*(P2Speed/10))/distance);
+	if (!end){
+		if (Vector2.Distance(Vector2(miniP1.transform.position.x,miniP1.transform.position.y),Vector2(miniP2.transform.position.x,miniP2.transform.position.y)) < 50){
+			if (P1Speed > P2Speed){
+				ref.Player1();
+			}else{
+				ref.Player2();
+			}
+			Application.LoadLevel ("Decision");
+			end = true;
+		}
+	}
 }
 
 
@@ -101,15 +138,35 @@ function P2Hurt(){
 
 
 function partyRules(){
+	while (!match){
+		var randIcon : int = Random.Range(0,icon.Length);
+		if (randIcon != iconPlayed){
+			match = true;
+		}
+	}
+	match = false;
+	iconPlayed = randIcon;
+	newIcon1 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
+	newIcon1.transform.parent = vocalist.transform.parent;
+	newIcon1.transform.position.x -= 350;
+	newIcon1.transform.position.y -= 550;
+	newIcon1.transform.position.x += spaceMulti;
+	
+	newIcon2 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
+	newIcon2.transform.parent = vocalist.transform.parent;
+	newIcon2.transform.position.x += 200;
+	newIcon2.transform.position.y -= 550;
+	newIcon2.transform.position.x += spaceMulti;
+	
+	iconMove = true;
+	spaceMulti += 150;
 	vDir = -1;
 	vocalDown = true;
-	Debug.Log("1");
 	yield WaitForSeconds (2.3);
+	iconMove = false;
 	vDir = 1;
 	vocalDown = true;
-	Debug.Log("2");
-	yield WaitForSeconds (5);
+	yield WaitForSeconds (2);
 	vocalDown = false;
 	vocalist.transform.position.y = 900;
-	Debug.Log("3");
 }
