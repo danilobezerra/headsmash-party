@@ -65,5 +65,19 @@ public class PlayerMovement : MonoBehaviour {
 	
 	public void PlayHurt() {
 		audio.PlayOneShot(hits[Random.Range(0, hits.Length)]);
+		StartCoroutine(Flash(0.1f, 1f));
 	}
+	
+	IEnumerator Flash(float time, float intervalTime) {
+        float elapsedTime = 0f;
+        int index = 0;
+		
+        while(elapsedTime < time) {
+            renderer.material.color = Color.red;
+
+            elapsedTime += Time.deltaTime;
+            index++;
+            yield return new WaitForSeconds(intervalTime);
+        }
+    }
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
 	public void StartGame() {
-		Application.LoadLevel("InGame");
+		Application.LoadLevel("Loading");
 	}
 
 	public void Update() {
