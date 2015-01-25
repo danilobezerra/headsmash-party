@@ -39,6 +39,11 @@ public var p1Red : boolean = false;
 public var p2Hurt : boolean = false;
 public var p2Red : boolean = false;
 
+public var pause : GameObject;
+public var pauseScreen : GameObject;
+public var paused : boolean = false;
+public var lastTime : float = 0;
+
 
 function Start(){
 	iconPlayed = -1;
@@ -48,6 +53,27 @@ function Start(){
 	partyRules();
 	var newReferee = GameObject.Find("Ref");
 	ref = newReferee.GetComponent("Referee");
+}
+
+
+function Update(){
+	if (Input.GetKeyUp(KeyCode.Escape) && !paused) {
+		pause = Instantiate(pauseScreen, Vector3.zero, Quaternion.identity);
+		pause.transform.parent = vocalist.transform.parent;
+		pause.transform.position.x += 540;
+		pause.transform.position.y += 320;
+		paused = true;
+		lastTime = Time.timeScale;
+		Time.timeScale = 0;
+	}else if (Input.GetKeyUp(KeyCode.Escape) && paused){
+		Destroy(pause);
+		Time.timeScale = lastTime;
+		paused = false;
+	}
+	
+	if (paused && Input.GetKey(KeyCode.Return)){
+		Application.Quit();
+	}
 }
 
 
@@ -147,7 +173,6 @@ function FixedUpdate() {
 			p2Red = false;
 		}
 	}
-	
 }
 
 

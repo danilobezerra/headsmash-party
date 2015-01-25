@@ -1,15 +1,16 @@
 #pragma strict
 
 public var p1 : boolean = false;
-
+public var changed : boolean = false;
 
 function Awake () {
 	DontDestroyOnLoad (transform.gameObject);
 }
 
 function FixedUpdate(){
-	if (Application.loadedLevelName == "Decision"){
+	if (Application.loadedLevelName == "Decision" && !changed){
 		Change();
+		changed = true;
 	}
 }
 
@@ -28,4 +29,5 @@ function Change(){
 	}else{
 		Application.LoadLevel ("Celebration_P2");
 	}
+	changed = false;
 }
