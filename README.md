@@ -14,7 +14,7 @@ We would like to thank the GGJ organizers for the opportunity to show our talent
 ## Developers:
 - Alan Garcia
 - Alexandre Greluk Szykman
-- Danilo Bezerra
+- Danilo dos Santos Bezerra
 - Eric Garcia
 - Guilherme L. de Cicco
 - Lucas Veroneze Tola
