@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	public void PlayHurt() {
-		audio.PlayOneShot(hits[Random.Range(0, hits.Length)]);
+		GetComponent<AudioSource>().PlayOneShot(hits[Random.Range(0, hits.Length)]);
 	}
 	
 }

@@ -4,7 +4,7 @@ var playing : boolean = false;
 function FixedUpdate(){
 	
 	if(!playing){
-		audio.Play();
+		GetComponent.<AudioSource>().Play();
 		playing = true;
 	}
 	if (!up){
