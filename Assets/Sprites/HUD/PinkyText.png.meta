@@ -1,0 +1,103 @@
+fileFormatVersion: 2
+guid: d5848c578073abe47abbd06749c533f2
+timeCreated: 1461264727
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PinkyText_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 60, z: 0, w: 490}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PinkyText_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 60
+        width: 460
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -114.81879, y: -0.45637512}
+        - {x: -110.81879, y: -2.4563751}
+        - {x: -110.81879, y: -18.456375}
+        - {x: -101.81879, y: -18.456375}
+        - {x: -95.81879, y: -17.456375}
+        - {x: -88.81879, y: 7.543625}
+        - {x: -88.81879, y: 20.543625}
+        - {x: -197.81879, y: 20.543625}
+        - {x: -197.81879, y: -18.456375}
+        - {x: -110.81879, y: -18.456375}
+        - {x: -110.81879, y: -11.456375}
+      - - {x: 48.181213, y: 20.543625}
+        - {x: -78.81879, y: 20.543625}
+        - {x: -78.81879, y: -4.456375}
+        - {x: -67.81879, y: -18.456375}
+        - {x: 48.181213, y: -18.456375}
+      - - {x: 106.18121, y: -18.456375}
+        - {x: 171.18121, y: -18.456375}
+        - {x: 172.18121, y: -15.456375}
+        - {x: 171.18121, y: -11.456375}
+        - {x: 167.18121, y: -6.456375}
+        - {x: 175.18121, y: -2.4563751}
+        - {x: 174.18121, y: -17.456375}
+        - {x: 177.18121, y: -18.456375}
+        - {x: 192.18121, y: -18.456375}
+        - {x: 194.18121, y: -17.456375}
+        - {x: 198.18121, y: 3.5436249}
+        - {x: 198.18121, y: 20.543625}
+        - {x: 63.181213, y: 20.543625}
+        - {x: 62.181213, y: 19.543625}
+        - {x: 62.181213, y: -18.456375}
+        - {x: 105.18121, y: -18.456375}
+        - {x: 105.18121, y: 13.543625}
+        - {x: 105.18121, y: -15.456375}
+    outline: []
+  spritePackingTag: HUD
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

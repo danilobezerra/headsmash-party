@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 481d58b6b97490d4c870cce4688047c0
+guid: 0fbf3c3aef3fe414c82afc56c2512ef0
+timeCreated: 1461259225
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: VerticalBar_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -36,7 +39,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,9 +50,35 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: VerticalBar_0
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 500
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 250, y: -465}
+        - {x: 250, y: 487}
+        - {x: 249, y: 500}
+        - {x: -249, y: 500}
+        - {x: -249, y: 488}
+        - {x: -250, y: 487}
+        - {x: -250, y: -465}
+        - {x: -249, y: -466}
+        - {x: -249, y: -485}
+        - {x: -248, y: -486}
+        - {x: -248, y: -500}
+        - {x: 248, y: -500}
+        - {x: 248, y: -486}
+        - {x: 249, y: -485}
+        - {x: 249, y: -466}
     outline: []
-  spritePackingTag: Units
+  spritePackingTag: HUD
   userData: 
   assetBundleName: 
   assetBundleVariant: 

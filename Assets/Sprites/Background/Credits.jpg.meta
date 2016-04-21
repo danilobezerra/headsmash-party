@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 481d58b6b97490d4c870cce4688047c0
+guid: 84fb5b0f9330ee34ea3ceaac2a335c28
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -49,7 +49,7 @@ TextureImporter:
   spriteSheet:
     sprites: []
     outline: []
-  spritePackingTag: Units
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

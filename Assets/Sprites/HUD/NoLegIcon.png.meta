@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 481d58b6b97490d4c870cce4688047c0
+guid: 20e82678f1aea5a43b25dc0c40ddb03d
+timeCreated: 1461257172
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: NO_LEG_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -24,10 +27,10 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: -2
+  maxTextureSize: 256
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -36,7 +39,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,9 +50,28 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: NO_LEG_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 149
+        width: 437
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.652, y: 48.386}
+        - {x: -46.652, y: 43.386}
+        - {x: -46.652, y: -22.613998}
+        - {x: -38.652, y: -46.614}
+        - {x: 43.348, y: -46.614}
+        - {x: 48.348, y: -26.613998}
+        - {x: 48.348, y: 35.386}
+        - {x: 37.348, y: 48.386}
     outline: []
-  spritePackingTag: Units
+  spritePackingTag: HUD
   userData: 
   assetBundleName: 
   assetBundleVariant: 
