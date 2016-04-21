@@ -4,16 +4,16 @@ public class _ObjectSpawn : MonoBehaviour {
 	public bool spawning = false;
 	private GameObject newEnemy;
 	private int canSpawn = 1;
-	int player = 1;
-	float minSpawnPerSecond = 0.3f;
-	float maxSpawnPerSecond = 0.6f;
+	public int player = 1;
+	public float minSpawnPerSecond = 0.3f;
+	public float maxSpawnPerSecond = 0.6f;
 	public GameObject[] Enemy;
-	_PlayerStats playerStats;
+	public _PlayerStats playerStats;
 
-	GameObject bgA;
-	GameObject bgB;
-	_bgControl bgScriptA;
-	_bgControl bgScriptB;
+	public GameObject bgA;
+	public GameObject bgB;
+	public _bgControl bgScriptA;
+	public _bgControl bgScriptB;
 
 	void Start() {
 		playerStats = gameObject.GetComponent<_PlayerStats>();

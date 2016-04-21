@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 public class _boom : MonoBehaviour {
-	bool up = false;
-	bool playing = false;
+	public bool up = false;
+	public bool playing = false;
 
 	void FixedUpdate() {
 		if (!playing) {

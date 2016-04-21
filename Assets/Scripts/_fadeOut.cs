@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class _fadeOut : MonoBehaviour {
-	SpriteRenderer rend;
+	public SpriteRenderer rend;
 
 	void Start() {
 		rend = transform.GetComponent<SpriteRenderer>();

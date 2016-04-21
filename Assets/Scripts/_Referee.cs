@@ -11,7 +11,7 @@ public class _Referee : MonoBehaviour {
 	
 	void FixedUpdate() {
 		if (Application.loadedLevelName == "Decision" && !changed) {
-			Change();
+			StartCoroutine(Change());
 			changed = true;
 		}
 	}

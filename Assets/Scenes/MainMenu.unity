@@ -328,7 +328,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 365526514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca90385df211694f984d03de3597805, type: 3}
+  m_Script: {fileID: 11500000, guid: f07ee80952dc6438496e1ab73caf106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   p1: 0
@@ -356,7 +356,6 @@ GameObject:
   - 212: {fileID: 1741456516}
   - 114: {fileID: 1741456518}
   - 82: {fileID: 1741456519}
-  - 114: {fileID: 1741456520}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -417,10 +416,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0404143a2e2444c9e7de775fef3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 1741456519}
+  _audio: {fileID: 144811732}
   clip: {fileID: 8300000, guid: 761b04f073839fe428e0d04d56b8b3fd, type: 3}
-  src: {fileID: 1741456520}
   playing: 0
+  seconds: 1.5
+  loadLevelName: Loading
 --- !u!82 &1741456519
 AudioSource:
   m_ObjectHideFlags: 0
@@ -495,16 +495,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1741456520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1741456515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b5c861eb7b776448193b1dd3cc30b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 1.5
-  loadLevelName: Loading

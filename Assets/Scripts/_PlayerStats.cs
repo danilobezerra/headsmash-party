@@ -51,10 +51,10 @@ public class _PlayerStats : MonoBehaviour {
 		iconPlayed = -1;
 		
 		yield return new WaitForSeconds(6);
-		partyRules();
+		StartCoroutine(partyRules());
 		
 		yield return new WaitForSeconds(8);
-		partyRules();
+		StartCoroutine(partyRules());
 		
 		GameObject newReferee = GameObject.Find("Ref");
 		_ref = newReferee.GetComponent<_Referee>();
@@ -107,7 +107,7 @@ public class _PlayerStats : MonoBehaviour {
 			if (hits1.Length >= 1) {
 				p1hit = true;
 				P1Speed *= hitSlow;
-				P1Hurt();
+				StartCoroutine(P1Hurt());
 			}
 		}
 		
@@ -124,7 +124,7 @@ public class _PlayerStats : MonoBehaviour {
 			if (hits2.Length >= 1) {
 				p2hit = true;
 				P2Speed *= hitSlow;
-				P2Hurt();
+				StartCoroutine(P2Hurt());
 			}
 		}
 		
@@ -197,7 +197,7 @@ public class _PlayerStats : MonoBehaviour {
 	}
 	
 	IEnumerator P1Hurt() {
-		player1.SendMessage("PlayHurt");
+		player1.GetComponent<PlayerMovement>().PlayHurt();
 		p1Hurt = true;
 		
 		yield return new WaitForSeconds(hurtDelay);
@@ -208,7 +208,7 @@ public class _PlayerStats : MonoBehaviour {
 	}
 	
 	IEnumerator P2Hurt() {
-		player2.SendMessage("PlayHurt");
+		player2.GetComponent<PlayerMovement>().PlayHurt();
 		p2Hurt = true;
 		
 		yield return new WaitForSeconds(hurtDelay);

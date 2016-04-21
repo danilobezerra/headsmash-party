@@ -2,20 +2,23 @@
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
-	public AudioSource audio;
+	public AudioSource _audio;
 	public AudioClip clip;
 	
-	public Component src;
 	public bool playing = false;
+	
+	public float seconds = 0;
+	public string loadLevelName;
 
 	public void StartGame() {
-		audio.PlayOneShot(clip);
-		src.SendMessage("AudioPlay");
+		_audio.PlayOneShot(clip);
+		StartCoroutine(AudioPlay());
 	}
 	
-	IEnumerator Example() {
-        yield return new WaitForSeconds(5);
-    }
+	IEnumerator AudioPlay() {
+		yield return new WaitForSeconds(seconds);
+		Application.LoadLevel(loadLevelName);
+	}
 
 	public void Update() {
 		if (Input.GetKey(KeyCode.Return) && !playing) {
