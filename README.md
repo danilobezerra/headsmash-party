@@ -1,4 +1,5 @@
 # HeadSmash Party
+[GGJ 2015 Entry - Theme: What do we do now?](http://globalgamejam.org/2015/games/headsmash-party)
 
 HeadSmash Party is a game about a metal show/party... And headsmashing... That's it.
 Two players have to run and dodge the bizarre "things" that showed up at the party to headsmash each other. Whoerever smashs faster survives. Meanwhile, the band singer will give you instructions, which you have to follow IN REAL LIFE:
