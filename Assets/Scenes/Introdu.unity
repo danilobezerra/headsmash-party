@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a35d71933a71413c859e2a4c28ee46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  nextSceneName: MainMenu
+  parameterName: ShowCredits
   waitSeconds: 15
 --- !u!95 &215278820
 Animator:
