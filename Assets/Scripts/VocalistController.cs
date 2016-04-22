@@ -1,30 +1,25 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class VocalistController : MonoBehaviour {
-	public GameObject vocalist;
-	public bool vocalDown;
-	public int vDir;
-
-	// Use this for initialization
-	void Start () {
+	[SerializeField] private GameObject vocalist;
 	
+	[SerializeField] private Transform startPosition;
+	[SerializeField] private Transform finalPosition;
+	
+	[SerializeField] private float speed;
+	[SerializeField] private bool _showing;
+	
+	public bool showing {
+		get { return _showing; }
+		set { _showing = value; }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (vocalDown) {
-			vocalist.transform.Translate(new Vector2(0, vDir) * 400 * Time.deltaTime);
-			
-			//if (iconMove) {
-			//	newIcon1.transform.Translate(new Vector2(0, vDir) * 400 * Time.deltaTime);
-			//	newIcon2.transform.Translate(new Vector2(0, vDir) * 400 * Time.deltaTime);
-			//}
-			
-			if (vocalist.transform.position.y <= 600) {
-				vDir = 1;
-				vocalDown = false;
-			}
-		}
+	private void Update() {
+		MovePosition(_showing ? finalPosition : startPosition);
+	}
+	
+	private void MovePosition(Transform target) {
+		float step = speed * Time.deltaTime;
+		vocalist.transform.position = Vector3.MoveTowards(vocalist.transform.position, target.position, step);
 	}
 }

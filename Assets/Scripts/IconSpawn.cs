@@ -19,13 +19,18 @@ public class IconSpawn : MonoBehaviour {
 	
 	}
 	
-	private void NewIcon(GameObject prefab, Transform iconSpawn) {
+	private GameObject NewIcon(GameObject prefab, Transform iconSpawn) {
 		GameObject clone = Instantiate(prefab, iconSpawn.position, Quaternion.identity) as GameObject;
 		clone.transform.parent = iconSpawn;
+		
+		return clone;
 	}
 	
 	public void NewIcon(GameObject prefab) {
-		NewIcon(prefab, first ? icon1Spawn : icon2Spawn);
+		GameObject icon = NewIcon(prefab, first ? icon1Spawn : icon2Spawn);
+		var controller = icon.GetComponent<_IconController>();
+		controller.target = first ? icon1 : icon2;
+		
 		first = false;
 	}
 }

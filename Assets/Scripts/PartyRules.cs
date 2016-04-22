@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IconController : MonoBehaviour {
+public class PartyRules : MonoBehaviour {
 	[System.Serializable] public class Icon {
 		public GameObject prefab;
 		public AudioClip sfx;
@@ -9,10 +9,20 @@ public class IconController : MonoBehaviour {
 	
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private Icon[] icons;
-	[SerializeField] private IconSpawn[] iconsSpawn;
 	
+	[SerializeField] private GameObject vocalist;
+	[SerializeField] private GameObject iconSpawn;
+	
+	
+	private VocalistController vocalistController;
+	private IconSpawn[] iconsSpawn;
 	
 	private int lastIconSelected;
+	
+	private void Awake() {
+		vocalistController = vocalist.GetComponent<VocalistController>();
+		iconsSpawn = iconSpawn.GetComponentsInChildren<IconSpawn>();
+	}
 	
 
 	// Use this for initialization
@@ -20,10 +30,10 @@ public class IconController : MonoBehaviour {
 		lastIconSelected = -1;
 		
 		yield return new WaitForSeconds(6);
-		StartCoroutine(PartyRules());
+		StartCoroutine(Rules());
 		
 		yield return new WaitForSeconds(8);
-		StartCoroutine(PartyRules());
+		StartCoroutine(Rules());
 	}
 	
 	// Update is called once per frame
@@ -31,7 +41,8 @@ public class IconController : MonoBehaviour {
 	
 	}
 	
-	IEnumerator PartyRules() {
+	IEnumerator Rules() {
+		vocalistController.showing = true;
 		int randomIndex = 0;
 		bool match = false;
 		
@@ -50,6 +61,7 @@ public class IconController : MonoBehaviour {
 		}
 		
 		yield return new WaitForSeconds(2.3f);
+		vocalistController.showing = false;
 	}
 	
 }

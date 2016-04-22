@@ -86,19 +86,19 @@ public class _PlayerStats : MonoBehaviour {
 	}
 	
 	void VocalDown() {
-		if (vocalist.vocalDown) {
+		//if (vocalist.vocalDown) {
 			//vocalist.transform.Translate(new Vector2(0, vDir) * 400 * Time.deltaTime);
 			
-			if (iconMove) {
-				newIcon1.transform.Translate(new Vector2(0, vocalist.vDir) * 400 * Time.deltaTime);
-				newIcon2.transform.Translate(new Vector2(0, vocalist.vDir) * 400 * Time.deltaTime);
-			}
+			//if (iconMove) {
+			//	newIcon1.transform.Translate(new Vector2(0, vocalist.vDir) * 400 * Time.deltaTime);
+			//	newIcon2.transform.Translate(new Vector2(0, vocalist.vDir) * 400 * Time.deltaTime);
+			//}
 			
 			//if (vocalist.transform.position.y <= 600) {
 			//	vDir = 1;
 			//	vocalDown = false;
 			//}
-		}
+		//}
 	}
 	
 	void MiniMove(float P1Speed, float P2Speed) {
@@ -162,18 +162,18 @@ public class _PlayerStats : MonoBehaviour {
 		
 		iconMove = true;
 		spaceMulti += 150;
-		vocalist.vDir = -1;
-		vocalist.vocalDown = true;
+		//vocalist.vDir = -1;
+		//vocalist.vocalDown = true;
 		yield return new WaitForSeconds(2.3f);
 		
 		iconMove = false;
-		vocalist.vDir = 1;
-		vocalist.vocalDown = true;
+		//vocalist.vDir = 1;
+		//vocalist.vocalDown = true;
 		yield return new WaitForSeconds(2);
 		
-		vocalist.vocalDown = false;
-		Vector3 vocalistPos = vocalist.vocalist.transform.position;
-		vocalistPos.y = 100;
-		vocalist.vocalist.transform.position = vocalistPos;
+		//vocalist.vocalDown = false;
+		//Vector3 vocalistPos = vocalist.vocalist.transform.position;
+		//vocalistPos.y = 100;
+		//vocalist.vocalist.transform.position = vocalistPos;
 	}
 }
