@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class _Referee : MonoBehaviour {
+	public static _Referee instance;
 	public bool p1 = false;
 	public bool changed = false;
 	
@@ -10,6 +11,12 @@ public class _Referee : MonoBehaviour {
 
 	void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
+	}
+	
+	private void Start() {
+		if (instance == null) {
+			instance = this.gameObject.GetComponent<_Referee>();
+		}
 	}
 	
 	void FixedUpdate() {
