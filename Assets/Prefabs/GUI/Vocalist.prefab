@@ -119,7 +119,7 @@ MonoBehaviour:
   vocalist: {fileID: 163360}
   startPosition: {fileID: 22437578}
   finalPosition: {fileID: 22496454}
-  speed: 300
+  speed: 500
   _showing: 0
 --- !u!222 &22233596
 CanvasRenderer:
@@ -222,7 +222,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171776}

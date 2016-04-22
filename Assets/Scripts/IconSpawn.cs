@@ -2,35 +2,40 @@
 using System.Collections;
 
 public class IconSpawn : MonoBehaviour {
-	[SerializeField] private Transform icon1Spawn;
-	[SerializeField] private Transform icon2Spawn;
-	[SerializeField] private Transform icon1;
-	[SerializeField] private Transform icon2;
-
-	private bool first = true;
-
-	// Use this for initialization
-	void Start () {
-	
+	[System.Serializable] public class IconPosition {
+		public Transform start;
+		public Transform final;
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	[SerializeField] private IconPosition icon1Position;
+	[SerializeField] private IconPosition icon2Position;
 	
+	private IList instantiatedIcons;
+	
+	private void Start() {
+		instantiatedIcons = new ArrayList();
 	}
 	
-	private GameObject NewIcon(GameObject prefab, Transform iconSpawn) {
-		GameObject clone = Instantiate(prefab, iconSpawn.position, Quaternion.identity) as GameObject;
-		clone.transform.parent = iconSpawn;
+	private GameObject InstantiateIcon(GameObject prefab, Transform start, Transform final) {
+		GameObject clone = Instantiate(prefab, start.position, Quaternion.identity) as GameObject;
+		clone.transform.parent = start;
+		
+		var controller = clone.GetComponent<_IconController>();
+		controller.target = final;
 		
 		return clone;
 	}
 	
 	public void NewIcon(GameObject prefab) {
-		GameObject icon = NewIcon(prefab, first ? icon1Spawn : icon2Spawn);
-		var controller = icon.GetComponent<_IconController>();
-		controller.target = first ? icon1 : icon2;
-		
-		first = false;
+		if (instantiatedIcons.Count == 0) {
+			AddNewIcon(prefab, icon1Position);
+		} else {
+			AddNewIcon(prefab, icon2Position);
+		}
+	}
+	
+	private void AddNewIcon(GameObject prefab, IconPosition newPosition) {
+		GameObject icon = InstantiateIcon(prefab, newPosition.start, newPosition.final);
+		instantiatedIcons.Add(icon);
 	}
 }

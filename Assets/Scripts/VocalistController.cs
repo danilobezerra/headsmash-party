@@ -7,7 +7,7 @@ public class VocalistController : MonoBehaviour {
 	[SerializeField] private Transform finalPosition;
 	
 	[SerializeField] private float speed;
-	[SerializeField] private bool _showing;
+	private bool _showing;
 	
 	public bool showing {
 		get { return _showing; }
