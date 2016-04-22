@@ -34,18 +34,12 @@ public class _PlayerStats : MonoBehaviour {
 	public GameObject decision;
 	public bool end = false;
 	
-	public _Referee _ref;
 
 	public bool p1Hurt = false;
 	public bool p1Red = false;
 
 	public bool p2Hurt = false;
 	public bool p2Red = false;
-	
-	public GameObject pause;
-	public GameObject pauseScreen;
-	public bool paused = false;
-	public float lastTime = 0;
 
 	IEnumerator Start() {
 		iconPlayed = -1;
@@ -55,33 +49,6 @@ public class _PlayerStats : MonoBehaviour {
 		
 		yield return new WaitForSeconds(8);
 		StartCoroutine(partyRules());
-		
-		GameObject newReferee = GameObject.Find("Ref");
-		_ref = newReferee.GetComponent<_Referee>();
-	}
-	
-	void Update() {
-		if (Input.GetKeyUp(KeyCode.Escape) && !paused) {
-			pause = Instantiate(pauseScreen, Vector3.zero, Quaternion.identity) as GameObject;
-			pause.transform.parent = vocalist.transform.parent;
-			
-			Vector3 pausePosition = pause.transform.position;
-			pausePosition.x += 640;
-			pausePosition.y += 400;
-			pause.transform.position = pausePosition;
-			
-			paused = true;
-			lastTime = Time.timeScale;
-			Time.timeScale = 0;
-		} else if (Input.GetKeyUp(KeyCode.Escape) && paused) {
-			Destroy(pause);
-			Time.timeScale = lastTime;
-			paused = false;
-		}
-		
-		if (paused && Input.GetKey(KeyCode.Return)) {
-			Application.Quit();
-		}
 	}
 	
 	void FixedUpdate() {
@@ -165,9 +132,9 @@ public class _PlayerStats : MonoBehaviour {
 			
 			if (Vector2.Distance(a, b) < 50) {
 				if (P1Speed > P2Speed) {
-					_ref.Player1();
+					_Referee.instance.Player1();
 				} else {
-					_ref.Player2();
+					_Referee.instance.Player2();
 				}
 				
 				Application.LoadLevel("Decision");
