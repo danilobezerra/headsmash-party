@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class IntroController : MonoBehaviour {
 	[SerializeField] private string nextSceneName;
-	[SerializeField] private string parameterName;
-	[SerializeField] private int waitSeconds;
+	[SerializeField] private string creditsParameterName;
+	[SerializeField] private float waitSeconds;
 	
 	private Animator animator;
 	private IEnumerator nowLoading;
@@ -20,17 +20,17 @@ public class IntroController : MonoBehaviour {
 	}
 	
 	private void Update() {
-		if (animator.GetBool(parameterName)) {
+		if (animator.GetBool(creditsParameterName)) {
 			if (Input.anyKeyDown) {
 				StopCoroutine(nowLoading);
-				animator.SetBool(parameterName, false);
+				animator.SetBool(creditsParameterName, false);
 			}
 		}
 	}
 	
 	private IEnumerator ShowCredits() {
 		yield return new WaitForSeconds(waitSeconds);
-		animator.SetBool(parameterName, false);
+		animator.SetBool(creditsParameterName, false);
 	}
 	
 	public void LoadLevel() {

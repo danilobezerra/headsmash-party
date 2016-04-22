@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: MainMenu
-  parameterName: ShowCredits
+  creditsParameterName: ShowCredits
   waitSeconds: 15
 --- !u!95 &215278820
 Animator:
