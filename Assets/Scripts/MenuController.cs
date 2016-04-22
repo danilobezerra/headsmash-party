@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour {
+public class MenuController : MonoBehaviour {
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField] private AudioClip sfx;
 	[SerializeField] private Animator textAnimator;
