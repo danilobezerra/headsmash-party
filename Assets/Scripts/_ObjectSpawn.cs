@@ -32,6 +32,9 @@ public class _ObjectSpawn : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
+		var P1 = playerStats.player1.GetComponent<PlayerMovement>();
+		var P2 = playerStats.player2.GetComponent<PlayerMovement>();
+		
 		canSpawn -= 1;
 		
 		if (spawning && canSpawn <= 0) {
@@ -56,26 +59,27 @@ public class _ObjectSpawn : MonoBehaviour {
 			float speedMulti = 0;
 			
 			if (player == 1) {
-				speedMulti = playerStats.P1Speed / 10;
+				speedMulti = P1.speed / 10;
 				oc = newEnemy.GetComponent<_ObjectControl>();
-				oc.dirRight = false;
+				oc.flip = false;
 			} else {
-				speedMulti = playerStats.P2Speed / 10;
+				speedMulti = P2.speed / 10;
 				oc = newEnemy.GetComponent<_ObjectControl>();
-				oc.dirRight = true;
+				oc.flip = true;
 			}
 			
 			oc = newEnemy.GetComponent<_ObjectControl>();
-			oc.speed *= speedMulti;
+			oc.velocity *= speedMulti;
+			
 			canSpawn = (int) Random.Range((25 / (maxSpawnPerSecond * speedMulti)), (25 / (minSpawnPerSecond * speedMulti)));
 		}
 		
 		float newSpeed = 0;
 		
 		if (player == 1) {
-			newSpeed = playerStats.P1Speed;
+			newSpeed = P1.speed;
 		} else{
-			newSpeed = playerStats.P2Speed;
+			newSpeed = P2.speed;
 		}
 		
 		bgScriptA.speed = newSpeed;

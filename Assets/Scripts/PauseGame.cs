@@ -2,11 +2,13 @@
 
 public class PauseGame : MonoBehaviour {
 	[SerializeField] private GameObject pauseScreen;
+	[SerializeField] private string cancelKey;
+	[SerializeField] private string submitKey;
 	
 	private float lastTimeScale;
 	
 	private void Update() {
-		if (Input.GetKeyUp(KeyCode.Escape)) {
+		if (Input.GetButtonDown(cancelKey)) {
 			if (Time.timeScale == 0) {
 				pauseScreen.SetActive(false);
 				Time.timeScale = lastTimeScale;
@@ -17,7 +19,7 @@ public class PauseGame : MonoBehaviour {
 			}
 		}
 		
-		if (Time.timeScale == 0 && Input.GetKey(KeyCode.Return)) {
+		if (Time.timeScale == 0 && Input.GetButtonDown(submitKey)) {
 			Debug.Log("Quit game");
 			Application.Quit();
 		}

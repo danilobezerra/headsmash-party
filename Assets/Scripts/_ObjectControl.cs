@@ -1,19 +1,34 @@
 ﻿using UnityEngine;
 
 public class _ObjectControl : MonoBehaviour {
-	public float speed = 10;
-	public bool dirRight  = false;
-
-	void FixedUpdate() {
-		Vector3 dir = new Vector3(1, 0, 0);
-		if (!dirRight) {
-			dir.x = -1;
+	[SerializeField] private float _velocity;
+	
+	private SpriteRenderer spriteRenderer;
+	
+	public float velocity {
+		get { return _velocity; }
+		set {
+			_velocity = value;
 		}
-		
-		transform.Translate(dir * speed * Time.deltaTime);
 	}
 	
-	void OnBecameInvisible() {
+	public bool flip {
+		get { return spriteRenderer.flipX; }
+		set {
+			spriteRenderer.flipX = value;
+		}
+	}
+	
+	private void Awake() {
+		spriteRenderer = this.GetComponent<SpriteRenderer>();
+	}
+
+	private void Update() {
+		Vector2 translation = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+		transform.Translate(translation * _velocity * Time.deltaTime);
+	}
+	
+	private void OnBecameInvisible() {
 		Destroy(gameObject);
 	}
 }
