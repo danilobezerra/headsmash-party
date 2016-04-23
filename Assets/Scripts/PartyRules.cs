@@ -57,7 +57,7 @@ public class PartyRules : MonoBehaviour {
 		audioSource.PlayOneShot(icons[randomIndex].sfx);
 		
 		foreach (var item in iconsSpawn) {
-			item.NewIcon(icons[randomIndex].prefab);
+			item.AddNewIcon(icons[randomIndex].prefab);
 		}
 		
 		yield return new WaitForSeconds(2.3f);

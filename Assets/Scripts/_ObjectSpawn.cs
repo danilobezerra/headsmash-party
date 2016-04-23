@@ -32,8 +32,8 @@ public class _ObjectSpawn : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		var P1 = playerStats.player1.GetComponent<PlayerMovement>();
-		var P2 = playerStats.player2.GetComponent<PlayerMovement>();
+		var P1 = playerStats.player1.character.GetComponent<PlayerMovement>();
+		var P2 = playerStats.player2.character.GetComponent<PlayerMovement>();
 		
 		canSpawn -= 1;
 		

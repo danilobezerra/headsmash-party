@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour {
 			if (hits1.Length >= 1) {
 				hit = true;
 				speed *= hitSlow;
-				StartCoroutine(P1Hurt());
+				StartCoroutine(Hurt());
 			}
 		}
 		
@@ -118,10 +118,10 @@ public class PlayerMovement : MonoBehaviour {
 			speed = 10;
 		}
 		
-		RedFlash();
+		FlashingRed();
 	}
 	
-	private IEnumerator P1Hurt() {
+	private IEnumerator Hurt() {
 		audioSource.PlayOneShot(hits[Random.Range(0, hits.Length)]);
 		hurt = true;
 		
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour {
 		hurt = false;
 		hit = false;
 	}
-	private void RedFlash() {
+	private void FlashingRed() {
 		if (hurt) {
 			if (!red) {
 				spriteRenderer.color = Color.red;
@@ -142,4 +142,6 @@ public class PlayerMovement : MonoBehaviour {
 			}
 		}
 	}
+	
+	
 }

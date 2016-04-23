@@ -2,44 +2,49 @@
 using System.Collections;
 
 public class _PlayerStats : MonoBehaviour {
-	public GameObject player1;
-	public GameObject player2;
+	public Player player1;
+	public Player player2;
+	
+	[System.Serializable] public class Player {
+		public GameObject character;
+		public GameObject icon;
+	}
+	
+	
 
 	public bool running = false;
-	public bool p1hit = false;
-	public bool p2hit = false;
-	public LayerMask enemyMask;
-	public float hitSlow = 0.9f;
-	public float hurtDelay = 0.2f;
+	//public bool p1hit = false;
+	//public bool p2hit = false;
+	//public LayerMask enemyMask;
+	//public float hitSlow = 0.9f;
+	//public float hurtDelay = 0.2f;
 	
 	public float distance = 3000;
 
-	public VocalistController vocalist;
+	//public VocalistController vocalist;
 	//public GameObject vocalist;
 	//public bool vocalDown;
 	//public int vDir;
 	
-	public float spaceMulti = 0;
-	public GameObject newIcon1;
-	public GameObject newIcon2;
-	public GameObject[] icon;
-	public bool iconMove = false;
-	public AudioClip[] vocalIcon;
+	//public float spaceMulti = 0;
+	//public GameObject newIcon1;
+	//public GameObject newIcon2;
+	//public GameObject[] icon;
+	//public bool iconMove = false;
+	//public AudioClip[] vocalIcon;
 	
-	public bool match = false;
-	public int iconPlayed;
+	//public bool match = false;
+	//public int iconPlayed;
 
-	public GameObject miniP1;
-	public GameObject miniP2;
-	public GameObject decision;
+	//public GameObject decision;
 	public bool end = false;
 	
 
-	public bool p1Hurt = false;
-	public bool p1Red = false;
+	//public bool p1Hurt = false;
+	//public bool p1Red = false;
 
-	public bool p2Hurt = false;
-	public bool p2Red = false;
+	//public bool p2Hurt = false;
+	//public bool p2Red = false;
 
 	/*IEnumerator Start() {
 		iconPlayed = -1;
@@ -52,8 +57,8 @@ public class _PlayerStats : MonoBehaviour {
 	}*/
 	
 	void FixedUpdate() {
-		var P1 = player1.GetComponent<PlayerMovement>();
-		var P2 = player2.GetComponent<PlayerMovement>();
+		var P1 = player1.character.GetComponent<PlayerMovement>();
+		var P2 = player2.character.GetComponent<PlayerMovement>();
 		
 		if (running){
 			P1.speed += ((50 - P1.speed) / 2000);
@@ -76,7 +81,7 @@ public class _PlayerStats : MonoBehaviour {
 			P2.speed = 10;
 		}
 		
-		VocalDown();
+		//VocalDown();
 		
 		MiniMove(P1.speed, P2.speed);
 		
@@ -85,7 +90,7 @@ public class _PlayerStats : MonoBehaviour {
 		//Hurt();
 	}
 	
-	void VocalDown() {
+	/*void VocalDown() {
 		//if (vocalist.vocalDown) {
 			//vocalist.transform.Translate(new Vector2(0, vDir) * 400 * Time.deltaTime);
 			
@@ -99,21 +104,21 @@ public class _PlayerStats : MonoBehaviour {
 			//	vocalDown = false;
 			//}
 		//}
-	}
+	}*/
 	
 	void MiniMove(float P1Speed, float P2Speed) {
-		Vector3 miniP1Pos = miniP1.transform.position;
-		Vector3 miniP2Pos = miniP2.transform.position;
+		Vector3 miniP1Pos = player1.icon.transform.position;
+		Vector3 miniP2Pos = player2.icon.transform.position;
 		
 		miniP1Pos.x += ((300 * (P1Speed / 10)) / distance);
 		miniP2Pos.x -= ((300 * (P2Speed / 10)) / distance);
 		
-		miniP1.transform.position = miniP1Pos;
-		miniP2.transform.position = miniP2Pos;
+		player1.icon.transform.position = miniP1Pos;
+		player2.icon.transform.position = miniP2Pos;
 		
 		if (!end) {
-			Vector2 a = new Vector2(miniP1.transform.position.x, miniP1.transform.position.y);
-			Vector2 b = new Vector2(miniP2.transform.position.x, miniP2.transform.position.y);
+			Vector2 a = new Vector2(player1.icon.transform.position.x, player1.icon.transform.position.y);
+			Vector2 b = new Vector2(player2.icon.transform.position.x, player2.icon.transform.position.y);
 			
 			if (Vector2.Distance(a, b) < 50) {
 				if (P1Speed > P2Speed) {
@@ -128,7 +133,7 @@ public class _PlayerStats : MonoBehaviour {
 		}
 	}
 	
-	IEnumerator partyRules() {
+	/*IEnumerator partyRules() {
 		int randIcon = 0;
 		
 		while (!match) {
@@ -175,5 +180,5 @@ public class _PlayerStats : MonoBehaviour {
 		//Vector3 vocalistPos = vocalist.vocalist.transform.position;
 		//vocalistPos.y = 100;
 		//vocalist.vocalist.transform.position = vocalistPos;
-	}
+	}*/
 }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class IconSpawn : MonoBehaviour {
 	[System.Serializable] public class IconPosition {
@@ -10,32 +9,28 @@ public class IconSpawn : MonoBehaviour {
 	[SerializeField] private IconPosition icon1Position;
 	[SerializeField] private IconPosition icon2Position;
 	
-	private IList instantiatedIcons;
-	
-	private void Start() {
-		instantiatedIcons = new ArrayList();
-	}
+	private int iconCount = 0;
 	
 	private GameObject InstantiateIcon(GameObject prefab, Transform start, Transform final) {
 		GameObject clone = Instantiate(prefab, start.position, Quaternion.identity) as GameObject;
-		clone.transform.parent = start;
+		clone.transform.SetParent(start);
 		
-		var controller = clone.GetComponent<_IconController>();
+		var controller = clone.GetComponent<IconController>();
 		controller.target = final;
 		
 		return clone;
 	}
 	
-	public void NewIcon(GameObject prefab) {
-		if (instantiatedIcons.Count == 0) {
-			AddNewIcon(prefab, icon1Position);
-		} else {
-			AddNewIcon(prefab, icon2Position);
+	public void AddNewIcon(GameObject prefab) {
+		switch (iconCount) {
+			case 0:
+				InstantiateIcon(prefab, icon1Position.start, icon1Position.final);
+				iconCount++;
+				break;
+			case 1:
+				InstantiateIcon(prefab, icon2Position.start, icon2Position.final);
+				iconCount++;
+				break;
 		}
-	}
-	
-	private void AddNewIcon(GameObject prefab, IconPosition newPosition) {
-		GameObject icon = InstantiateIcon(prefab, newPosition.start, newPosition.final);
-		instantiatedIcons.Add(icon);
 	}
 }

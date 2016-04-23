@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class _IconController : MonoBehaviour {
+public class IconController : MonoBehaviour {
 	[SerializeField] private float speed;
 	private Transform _target;
 	
