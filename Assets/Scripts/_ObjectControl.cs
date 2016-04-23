@@ -24,7 +24,7 @@ public class _ObjectControl : MonoBehaviour {
 	}
 
 	private void Update() {
-		Vector2 translation = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+		Vector2 translation = !spriteRenderer.flipX ? Vector2.left : Vector2.right;
 		transform.Translate(translation * _velocity * Time.deltaTime);
 	}
 	
