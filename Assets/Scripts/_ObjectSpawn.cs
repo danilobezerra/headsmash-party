@@ -8,7 +8,10 @@ public class _ObjectSpawn : MonoBehaviour {
 	public float minSpawnPerSecond = 0.3f;
 	public float maxSpawnPerSecond = 0.6f;
 	public GameObject[] Enemy;
-	public _PlayerStats playerStats;
+	
+	[SerializeField] private GameObject players;
+	
+	private PlayerManager playerStats;
 
 	public GameObject bgA;
 	public GameObject bgB;
@@ -16,7 +19,7 @@ public class _ObjectSpawn : MonoBehaviour {
 	public _bgControl bgScriptB;
 
 	void Start() {
-		playerStats = gameObject.GetComponent<_PlayerStats>();
+		playerStats = players.GetComponent<PlayerManager>();
 		bool logic;
 		
 		if (player == 1) {
@@ -32,8 +35,8 @@ public class _ObjectSpawn : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		var P1 = playerStats.player1.character.GetComponent<PlayerMovement>();
-		var P2 = playerStats.player2.character.GetComponent<PlayerMovement>();
+		var P1 = playerStats.player1.character.GetComponent<PlayerController>();
+		var P2 = playerStats.player2.character.GetComponent<PlayerController>();
 		
 		canSpawn -= 1;
 		

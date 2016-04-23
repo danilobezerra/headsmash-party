@@ -7,16 +7,12 @@ public class _ObjectControl : MonoBehaviour {
 	
 	public float velocity {
 		get { return _velocity; }
-		set {
-			_velocity = value;
-		}
+		set { _velocity = value; }
 	}
 	
 	public bool flip {
 		get { return spriteRenderer.flipX; }
-		set {
-			spriteRenderer.flipX = value;
-		}
+		set { spriteRenderer.flipX = value; }
 	}
 	
 	private void Awake() {

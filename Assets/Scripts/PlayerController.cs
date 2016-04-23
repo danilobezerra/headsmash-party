@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 	[System.Serializable] public class PlayerPosition {
 		public Transform top;
 		public Transform middle;

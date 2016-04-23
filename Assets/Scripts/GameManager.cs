@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class _Referee : MonoBehaviour {
-	public static _Referee instance;
+public class GameManager : MonoBehaviour {
+	public static GameManager instance;
 	public bool p1 = false;
 	public bool changed = false;
 	
@@ -15,7 +15,7 @@ public class _Referee : MonoBehaviour {
 	
 	private void Start() {
 		if (instance == null) {
-			instance = this.gameObject.GetComponent<_Referee>();
+			instance = this.gameObject.GetComponent<GameManager>();
 		}
 	}
 	
@@ -36,6 +36,7 @@ public class _Referee : MonoBehaviour {
 			}
 			
 			changed = true;
+			Destroy(gameObject);
 		}
 	}
 	
