@@ -32,8 +32,8 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: -3
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -67,14 +67,28 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -27, y: 24}
-        - {x: -31, y: 21}
-        - {x: -31, y: -24}
-        - {x: -28, y: -32}
-        - {x: 17, y: -32}
-        - {x: 26, y: -11}
-        - {x: 32, y: 5}
-        - {x: 32, y: 24}
+      - - {x: 20, y: -7}
+        - {x: 28, y: -19}
+        - {x: 35, y: -27}
+        - {x: 95, y: 5}
+        - {x: 95, y: 68}
+        - {x: 94, y: 69}
+        - {x: -84, y: 69}
+        - {x: -89, y: 68}
+        - {x: -91, y: 59}
+        - {x: -91, y: 11}
+        - {x: -74, y: -10}
+        - {x: -49, y: -31}
+        - {x: -45, y: -40}
+        - {x: -41, y: -44}
+        - {x: -45, y: -40}
+        - {x: -48, y: -33}
+        - {x: -74, y: -42}
+        - {x: -62, y: -95}
+        - {x: 47, y: -95}
+        - {x: 55, y: -48}
+        - {x: 29, y: -20}
+        - {x: 21, y: -12}
     - name: HeadBanger_P2_SpriteSheet_1
       rect:
         serializedVersion: 2
@@ -86,22 +100,25 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 9, y: -22}
-        - {x: 12, y: -22}
-        - {x: 21, y: -21}
-        - {x: 32, y: 5}
-        - {x: 32, y: 24}
-        - {x: -9, y: 24}
-        - {x: -29, y: 23}
-        - {x: -31, y: 17}
-        - {x: -31, y: 0}
-        - {x: -23, y: -30}
-        - {x: -20, y: -32}
-        - {x: 9, y: -32}
-        - {x: 18, y: -30}
-        - {x: 15, y: -25}
-        - {x: 12, y: -22}
-        - {x: 2, y: -21}
+      - - {x: -54, y: -70}
+        - {x: -61, y: -74}
+        - {x: -61, y: -95}
+        - {x: 43, y: -95}
+        - {x: 43, y: -72}
+        - {x: 34, y: -70}
+      - - {x: 86, y: 47}
+        - {x: 95, y: 48}
+        - {x: 95, y: 66}
+        - {x: 89, y: 69}
+        - {x: -66, y: 69}
+        - {x: -88, y: 67}
+        - {x: -91, y: 59}
+        - {x: -91, y: 5}
+        - {x: -59, y: -71}
+        - {x: 52, y: -71}
+        - {x: 95, y: 4}
+        - {x: 95, y: 11}
+        - {x: 89, y: 42}
     - name: HeadBanger_P2_SpriteSheet_2
       rect:
         serializedVersion: 2
@@ -113,12 +130,36 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -30, y: 24}
-        - {x: -30, y: -32}
-        - {x: 16, y: -32}
-        - {x: 32, y: -18}
-        - {x: 32, y: 22}
-        - {x: 30, y: 24}
+      - - {x: 36, y: -26}
+        - {x: 30, y: -23}
+        - {x: 25, y: -23}
+        - {x: 23, y: -12}
+        - {x: 22, y: -7}
+        - {x: 30, y: -19}
+        - {x: 37, y: -27}
+        - {x: 97, y: 5}
+        - {x: 97, y: 66}
+        - {x: 95, y: 68}
+        - {x: 88, y: 69}
+        - {x: 61, y: 69}
+        - {x: 58, y: 68}
+        - {x: 48, y: 69}
+        - {x: -63, y: 69}
+        - {x: -89, y: 56}
+        - {x: -89, y: 18}
+        - {x: -75, y: -13}
+        - {x: -43, y: -40}
+        - {x: -39, y: -44}
+        - {x: -43, y: -40}
+        - {x: -48, y: -38}
+        - {x: -55, y: -37}
+        - {x: -72, y: -42}
+        - {x: -62, y: -93}
+        - {x: -46, y: -95}
+        - {x: 17, y: -95}
+        - {x: 37, y: -91}
+        - {x: 44, y: -86}
+        - {x: 45, y: -51}
     - name: HeadBanger_P2_SpriteSheet_3
       rect:
         serializedVersion: 2
@@ -130,16 +171,15 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -14, y: 24}
-        - {x: -29, y: 22}
-        - {x: -31, y: 16}
-        - {x: -31, y: 0}
-        - {x: -23, y: -32}
-        - {x: 11, y: -32}
-        - {x: 20, y: -31}
-        - {x: 32, y: 9}
-        - {x: 32, y: 21}
-        - {x: 28, y: 24}
+      - - {x: 95, y: 69}
+        - {x: -80, y: 69}
+        - {x: -91, y: 54}
+        - {x: -91, y: -53}
+        - {x: -71, y: -95}
+        - {x: 43, y: -95}
+        - {x: 47, y: -78}
+        - {x: 35, y: -73}
+        - {x: 95, y: -16}
     - name: HeadBanger_P2_SpriteSheet_4
       rect:
         serializedVersion: 2
@@ -151,12 +191,15 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -31, y: 24}
-        - {x: -31, y: -32}
-        - {x: 18, y: -32}
-        - {x: 32, y: -3}
-        - {x: 32, y: 22}
-        - {x: 29, y: 24}
+      - - {x: -53, y: 69}
+        - {x: -87, y: 65}
+        - {x: -91, y: 50}
+        - {x: -91, y: 7}
+        - {x: -65, y: -95}
+        - {x: 28, y: -95}
+        - {x: 48, y: -87}
+        - {x: 95, y: -32}
+        - {x: 95, y: 69}
     - name: HeadBanger_P2_SpriteSheet_5
       rect:
         serializedVersion: 2
@@ -168,11 +211,24 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -31, y: 24}
-        - {x: -31, y: -32}
-        - {x: 24, y: -32}
-        - {x: 32, y: -3}
-        - {x: 32, y: 24}
+      - - {x: -31, y: -71}
+        - {x: -39, y: -71}
+        - {x: -43, y: -72}
+        - {x: -38, y: -71}
+        - {x: -31, y: -68}
+        - {x: 22, y: -67}
+        - {x: 42, y: -62}
+        - {x: 95, y: 4}
+        - {x: 95, y: 69}
+        - {x: -91, y: 69}
+        - {x: -91, y: 10}
+        - {x: -69, y: -80}
+        - {x: -59, y: -91}
+        - {x: -49, y: -95}
+        - {x: 41, y: -95}
+        - {x: 49, y: -77}
+        - {x: 22, y: -69}
+        - {x: -31, y: -70}
     - name: HeadBanger_P2_SpriteSheet_6
       rect:
         serializedVersion: 2
@@ -184,12 +240,15 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -31, y: 24}
-        - {x: -31, y: -32}
-        - {x: 18, y: -32}
-        - {x: 32, y: -3}
-        - {x: 32, y: 22}
-        - {x: 29, y: 24}
+      - - {x: -53, y: 69}
+        - {x: -87, y: 65}
+        - {x: -91, y: 50}
+        - {x: -91, y: 7}
+        - {x: -65, y: -95}
+        - {x: 28, y: -95}
+        - {x: 48, y: -87}
+        - {x: 95, y: -32}
+        - {x: 95, y: 69}
     - name: HeadBanger_P2_SpriteSheet_7
       rect:
         serializedVersion: 2
@@ -201,16 +260,15 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -14, y: 24}
-        - {x: -29, y: 22}
-        - {x: -31, y: 16}
-        - {x: -31, y: 0}
-        - {x: -23, y: -32}
-        - {x: 11, y: -32}
-        - {x: 20, y: -31}
-        - {x: 32, y: 9}
-        - {x: 32, y: 21}
-        - {x: 28, y: 24}
+      - - {x: 95, y: 69}
+        - {x: -80, y: 69}
+        - {x: -91, y: 54}
+        - {x: -91, y: -53}
+        - {x: -71, y: -95}
+        - {x: 43, y: -95}
+        - {x: 47, y: -78}
+        - {x: 35, y: -73}
+        - {x: 95, y: -16}
     outline: []
   spritePackingTag: Players
   userData: 
