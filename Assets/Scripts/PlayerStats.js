@@ -156,10 +156,10 @@ function FixedUpdate() {
 	
 	if (p1Hurt){
 		if (!p1Red){
-			player1.renderer.material.color = Color.red;
+			player1.GetComponent.<Renderer>().material.color = Color.red;
 			p1Red = true;
 		}else{
-			player1.renderer.material.color = Color.white;
+			player1.GetComponent.<Renderer>().material.color = Color.white;
 			p1Red = false;
 		}
 	}
@@ -167,10 +167,10 @@ function FixedUpdate() {
 	
 	if (p2Hurt){
 		if (!p2Red){
-			player2.renderer.material.color = Color.red;
+			player2.GetComponent.<Renderer>().material.color = Color.red;
 			p2Red = true;
 		}else{
-			player2.renderer.material.color = Color.white;
+			player2.GetComponent.<Renderer>().material.color = Color.white;
 			p2Red = false;
 		}
 	}
@@ -182,7 +182,7 @@ function P1Hurt(){
 	p1Hurt = true;
 	yield WaitForSeconds(hurtDelay);
 	p1Hurt = false;
-	player1.renderer.material.color = Color.white;
+	player1.GetComponent.<Renderer>().material.color = Color.white;
 	p1hit = false;
 }
 
@@ -192,7 +192,7 @@ function P2Hurt(){
 	p2Hurt = true;
 	yield WaitForSeconds(hurtDelay);
 	p2Hurt = false;
-	player2.renderer.material.color = Color.white;
+	player2.GetComponent.<Renderer>().material.color = Color.white;
 	p2hit = false;
 }
 
@@ -207,7 +207,7 @@ function partyRules(){
 	match = false;
 	iconPlayed = randIcon;
 	newIcon1 = Instantiate(icon[randIcon], vocalist.transform.position, Quaternion.identity);
-	audio.PlayOneShot(vocalIcon[randIcon]);
+	GetComponent.<AudioSource>().PlayOneShot(vocalIcon[randIcon]);
 	newIcon1.transform.parent = vocalist.transform.parent;
 	newIcon1.transform.position.x -= 350;
 	newIcon1.transform.position.y -= 550;

@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 02971f8fd4d7a034a8800b6c13881c71
+timeCreated: 1461264539
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SwapHandsText_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 60, z: 0, w: 490}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SwapHandsText_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 58
+        width: 400
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -139.54698, y: 2.8255043}
+        - {x: -130.54698, y: -21.174496}
+        - {x: -96.54698, y: -21.174496}
+        - {x: -86.54698, y: 8.825504}
+        - {x: -86.54698, y: 22.825504}
+        - {x: -96.54698, y: 22.825504}
+        - {x: -98.54698, y: 20.825504}
+        - {x: -101.54698, y: 11.825504}
+        - {x: -110.54698, y: 22.825504}
+        - {x: -167.54698, y: 22.825504}
+        - {x: -170.54698, y: 20.825504}
+        - {x: -170.54698, y: 3.8255043}
+        - {x: -164.54698, y: -4.1744957}
+        - {x: -167.54698, y: -4.1744957}
+        - {x: -170.54698, y: -7.1744957}
+        - {x: -170.54698, y: -17.174496}
+        - {x: -168.54698, y: -21.174496}
+        - {x: -148.54698, y: -21.174496}
+        - {x: -138.54698, y: -19.174496}
+        - {x: -137.54698, y: -12.174496}
+        - {x: -139.54698, y: 2.8255043}
+        - {x: -144.54698, y: 4.8255043}
+      - - {x: -30.546982, y: 22.825504}
+        - {x: -87.54698, y: 22.825504}
+        - {x: -97.54698, y: 8.825504}
+        - {x: -97.54698, y: -21.174496}
+        - {x: -35.54698, y: -21.174496}
+        - {x: -26.546982, y: -5.1744957}
+        - {x: -26.546982, y: 18.825504}
+      - - {x: 167.45302, y: 4.8255043}
+        - {x: 172.45302, y: 8.825504}
+        - {x: 173.45302, y: 14.825504}
+        - {x: 173.45302, y: 22.825504}
+        - {x: -12.546982, y: 22.825504}
+        - {x: -12.546982, y: -21.174496}
+        - {x: 171.45302, y: -21.174496}
+        - {x: 173.45302, y: -20.174496}
+        - {x: 173.45302, y: 0.8255043}
+    outline: []
+  spritePackingTag: HUD
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
